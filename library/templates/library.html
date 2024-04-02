@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends 'parent.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>{% block title %} Library {% endblock %}</title>
+<link rel="stylesheet" href='{% static "css/style1.css" %}'>
+<body>
+{% block content %}
+<h1>welcome to library</h1>
+{%for i in book%}
+<ul>Book_details</ul>
+<li><img src="{{i.cover.url}}" height="100px" width="100px"></li>
+<li>Author:{{i.author_name}}</li>
+<li>Title:{{i.book_name}}</li>
+<li>Price:{{i.price}}</li>
+<li>pdf:{{i.pdf}}</li>
+
+<br>
+{% endfor %}
+<table class=" table table-bordered">
+    <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Document</th>
+    </tr>
+    {%for i in book%}
+    <tr>
+    <td>{{i.author_name}}</td>
+    <td>{{i.book_name}}</td>
+    <td>{{i.price}}</td>
+        <td><img src="{{i.cover.url}}" height="100px" width="100px"></td>
+       <td><a href="{% url 'books:edit' i.id %}" style="color:red;">edit</a></td>
+        <td><a href="{% url 'books:delete' i.id%}" style="color:red;">delete</a></td>
+        <td><a href="{% url 'books:view' i.id%}" style="color:red;">view</a></td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+
+{% endblock %}
+
+</body>
+</html>

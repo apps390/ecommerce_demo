@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'parent.html' %}
+{% load static %}
+<title>{% block title %} view {% endblock%}</title>
+
+{% block content %}
+<body>
+<table class=" table table-bordered">
+    <tr>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Document</th>
+    </tr>
+    <tr>
+    <td>{{k.author_name}}</td>
+    <td>{{k.book_name}}</td>
+    <td>{{k.price}}</td>
+        <td><img src="{{k.cover.url}}" height="100px" width="100px"></td>
+        </tr>
+</body>
+{% endblock %}
+
+</html>

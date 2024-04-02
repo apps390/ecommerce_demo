@@ -1,0 +1,20 @@
+body
+{
+background-color:#68707d;
+}
+.navbar-brand
+{
+color:white;
+
+}
+.nav-link{
+color:white;
+}
+.anc{
+text-decoration :none;
+}
+.container-form{
+width:75%;
+height:550px;
+margin:auto;
+}

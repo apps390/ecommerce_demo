@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'parent.html' %}
+{% load static %}
+<title>{% block title %} Login {% endblock%}</title>
+{% block content %}
+
+<h1>welcome to the login page</h1>
+<form method="POST">
+  {% csrf_token %}
+    <div class="form-label">
+    <label for="name">Username</label>
+    <input type="Text" class="form-control" id="name" placeholder="username" name="username">
+  </div>
+  <div class="form-label">
+    <label for="Password1">Password</label>
+    <input type="password" class="form-control" id="Password1" placeholder="Password" name="password">
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+{% endblock %}
